@@ -5,7 +5,7 @@ var pluginClear = require('..');
 
 var shell = require('shelljs');
 
-var should = require('should');
+require('should');
 
 // override console.error() to cover up common.error() calls
 console.error = function () { };
@@ -34,9 +34,9 @@ describe('plugin-clear', function () {
     pluginClear.clear.should.be.type('function');
   });
 
-  it('returns undefined', function () {
+  it('has a silent return value', function () {
     var ret = shell.clear();
-    should(ret === undefined);
+    ret.inspect().should.equal('');
   });
 
   it('does not get added as a method on ShellStrings', function () {

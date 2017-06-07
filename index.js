@@ -1,5 +1,14 @@
 var plugin = require('shelljs/plugin');
-var clear = require('clear');
+var clearModule = require('clear');
+
+function clear() {
+  clearModule();
+  return {
+    inspect: function () {
+      return '';
+    },
+  };
+}
 
 plugin.register('clear', clear, {
   allowGlobbing: false,
