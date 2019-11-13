@@ -41,5 +41,8 @@
   },
   "dependencies": {
     "clear": "0.0.1"
+  },
+  "engines": {
+    "node": ">=8"
   }
 }
