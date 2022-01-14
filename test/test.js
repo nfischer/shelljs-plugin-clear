@@ -4,6 +4,7 @@ var pluginClear = require('..');
 // If we were using additional plugins, we could load them here
 
 var shell = require('shelljs');
+var util = require('util');
 
 require('should');
 
@@ -36,7 +37,7 @@ describe('plugin-clear', function () {
 
   it('has a silent return value', function () {
     var ret = shell.clear();
-    ret.inspect().should.equal('');
+    util.inspect(ret).should.equal('');
   });
 
   it('does not get added as a method on ShellStrings', function () {

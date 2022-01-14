@@ -1,13 +1,17 @@
 var plugin = require('shelljs/plugin');
+var util = require('util');
 var clearModule = require('clear');
+
+// Newer versions of node use a symbol called util.inspect.custom.
+var inspectAttribute = util.inspect.custom || 'inspect';
 
 function clear() {
   clearModule();
-  return {
-    inspect: function () {
-      return '';
-    },
+  var ret = {};
+  ret[inspectAttribute] = function () {
+    return '';
   };
+  return ret;
 }
 
 plugin.register('clear', clear, {
