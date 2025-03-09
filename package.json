@@ -1,6 +1,6 @@
 {
   "name": "shelljs-plugin-clear",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A ShellJS plugin for the clear command.",
   "main": "index.js",
   "scripts": {
